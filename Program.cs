@@ -6,87 +6,93 @@ using System.Threading.Tasks;
 
 namespace mysecondobject
 {
-    class Vehicle
+    class Program
     {
-        public string brand1 = "Ford";  
-        public int engineHP1 = 650;
-        public int engineHP2 = 600;
-        public string brand2 = "Dodge";
-        public int engineHP3 = 675;
-        public int engineHP4 = 650;
-        public string brand3 = "Chevrolet";
-        public int engineHP5 = 812;
-        public int engineHP6 = 704;
-        public int engineHP7 = 950;
-
-        public void honk0()           
+        static void Main(string[] args)
         {
-            Console.WriteLine("Your car honk like Pooq, pooq!");
-        }
-        public void honk1()
-        {
-            Console.WriteLine("Your car honk like Peep, peep!");
-        }
-    }
-
-    class Car : Vehicle  
-    {
-        public string modelName; 
-
-        public Car(string modelName)
-        {
-            this.modelName = modelName;
-        }
-
-    public void Make()
-        {
-            if(modelName == "Mustang" || modelName == "mustang" || modelName == "F150" || modelName == "f150")
+            Console.WriteLine("Please enter your name:");
+            string Name = Console.ReadLine();
+            Console.WriteLine("Please enter your address:");
+            string Address = Console.ReadLine();
+            Console.WriteLine("Please enter your age:");
+            int Age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("What car do you have?");
+            string modelName = Console.ReadLine();
+            Console.WriteLine("Do you have pets?");
+            string YesorNo = Console.ReadLine();
+            bool HasPet;
+            if (YesorNo == "yes")
             {
-                Console.WriteLine("Your car make is " + brand1 + ".");
-                if (modelName == "Mustang" || modelName == "mustang")
-                {
-                    Console.WriteLine("Your car makes " + engineHP1 + "HP.");
-                }
-                else
-                {
-                    Console.WriteLine("Your car makes " + engineHP2 + "HP.");
-                }
-                honk0();
-            }
-            else if(modelName == "Corvette" || modelName == "corvette" || modelName == "Camaro" || modelName == "camaro")
-            {
-                Console.WriteLine("Your car make is " + brand3 + ".");
-                if (modelName == "Corvette" || modelName == "corvette")
-                {
-                    Console.WriteLine("Your car makes " + engineHP3 + "HP.");
-                }
-                else
-                {
-                    Console.WriteLine("Your car makes " + engineHP4 + "HP.");
-                }
-                honk0();
-            }
-            else if(modelName == "Challenger" || modelName == "challenger" || modelName == "Charger" || modelName == "charger" || modelName == "Viper" || modelName == "vioer")
-            {
-                Console.WriteLine("Your car make is " + brand2 + ".");
-                if (modelName == "Challenger" || modelName == "challenger")
-                {
-                    Console.WriteLine("Your car makes " + engineHP5 + "HP.");
-                }
-                else if (modelName == "Charger" || modelName == "charger")
-                {
-                    Console.WriteLine("Your car makes " + engineHP6 + "HP.");
-                }
-                else
-                {
-                    Console.WriteLine("Your car makes " + engineHP7 + "HP.");
-                }
-                honk0();
+                HasPet = true;
             }
             else
             {
-                Console.WriteLine("You do not own an American Car.");
-                honk1();
+                HasPet = false;
+            }
+            Person person = new Person(Name, Address, Age, HasPet);
+            Car hisorhercar = new Car(modelName);
+            Animal myAnimal = new Animal();
+            Animal myPig = new Pig();
+            Animal myDog = new Dog();
+            Animal myCat = new Cat();
+            Animal myHorse = new Horse();
+            Animal myBird = new Bird();
+            ///////////////////////////////////////////////////////////////////
+            Console.WriteLine("What is your pets name?");
+            string PetName = Console.ReadLine();
+            Console.WriteLine("Is " + PetName + " he or she?");
+            string HeOrShe = Console.ReadLine();
+            Console.WriteLine("What kind of pet you have?");
+            string PetKind = Console.ReadLine();
+            Console.WriteLine("\n");
+            if (PetKind == "Pig" || PetKind == "pig")
+            {
+                myAnimal.animalSound();
+                myPig.animalSound();
+                person.Greeting();
+                person.Bus();
+                hisorhercar.Make();
+            }
+            else if (PetKind == "Dog" || PetKind == "dog")
+            {
+                myAnimal.animalSound();
+                myDog.animalSound();
+                person.Greeting();
+                person.Bus();
+                hisorhercar.Make();
+            } 
+            else if (PetKind == "Cat" || PetKind == "cat")
+            {
+                myAnimal.animalSound();
+                myCat.animalSound();
+                person.Greeting();
+                person.Bus();
+                hisorhercar.Make();
+            }
+            else if (PetKind == "Horse" || PetKind == "horse")
+            {
+                myAnimal.animalSound();
+                myHorse.animalSound();
+                person.Greeting();
+                person.Bus();
+                hisorhercar.Make();
+            }
+            else if (PetKind == "Bird" || PetKind == "bird")
+            {
+                myAnimal.animalSound();
+                myBird.animalSound();
+                person.Greeting();
+                person.Bus();
+                hisorhercar.Make();
+            }
+            else
+            {
+                Console.WriteLine("What is your pet sounds like?");
+                string AniSound = Console.ReadLine();
+                Console.WriteLine("Cool");
+                person.Greeting();
+                person.Bus();
+                hisorhercar.Make();
             }
         }
     }
